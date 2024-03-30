@@ -17,12 +17,16 @@ public class LinkedList {
     }
 
     public void addNode(int value){
-        Node newNode = new Node();
-        newNode.value = value;
-        newNode.next = null;
-        tail.next = newNode;
-        tail = newNode;
-        size++;
+        if(head == null){
+            createLL(value);
+        } else {
+            Node newNode = new Node();
+            newNode.value = value;
+            newNode.next = null;
+            tail.next = newNode;
+            tail = newNode;
+            size++;
+        }
     }
 
     public void traverseLL(){
